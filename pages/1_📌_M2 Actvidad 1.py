@@ -105,5 +105,76 @@ df_productos = pd.DataFrame(productos, columns=columnas)
 
 st.dataframe(df_productos)
 
+lista_ciudades = [
+    {
+        "nombre": "Medellín",
+        "Población": "2,800,000",
+        "País": "Colombia",
+    },
+    {
+        "nombre": "Bogotá",
+        "Población": "7,000,000 ",
+        "País": "Colombia",
+    },
+    {
+        "nombre": "Nueva York",
+        "Población": "9,500,000",
+        "País": "Estados Unidos",
+    },
+    {
+        "nombre": "Los Ángeles ",
+        "Población": "5,000,000",
+        "País": "Estados Unidos",
+    },
+]
+
+df_lista_ciudades = pd.DataFrame(lista_ciudades)
+st.subheader("**2. Lista de diccionarios:**")
+
+st.write(
+    """**Una lista de diccionarios es como una colección de filas, donde cada diccionario representa una fila con sus columnas etiquetadas.**
+    Crea una lista que contenga varios diccionarios (por ejemplo, 3 o 4). Cada diccionario debe tener las claves "nombre", "población" y "país", 
+    con valores correspondientes a ciudades diferentes."""
+)
+
+st.subheader("Información de Ciudades")
+st.dataframe(df_lista_ciudades)
+
+
+
+with st.expander("Ver información de las ciudades"):
+    st.dataframe(df_lista_ciudades)
+
+
+    nombres = pd.Series(
+    [
+        "Lucas",
+        "Mario",
+        "Sara",
+        "Carolina",
+        "John",
+    ]
+)
+edades = pd.Series([18, 20, 23, 30, 40])
+ciudades = pd.Series(["Medellín", "Bogotá", "Cali", "Armenia", "Manizales"])
+
+
+series_combinadas = {
+    "Nombres": nombres,
+    "edades": edades,
+    "ciudades": ciudades,
+}
+df_datos_personas = pd.DataFrame(series_combinadas)
+st.subheader("Datos de Personas")
+st.dataframe(df_datos_personas)
+
+
+with st.expander("Información sobre la creación de Series y DataFrame de personas", expanded=True):
+    st.info(
+        "Se crearon tres Series de pandas para nombres, edades y ciudades. "
+        " estas Series se combinaron en un diccionario  para mostrar los datos de varias personas."
+    )
+
+
 
 
